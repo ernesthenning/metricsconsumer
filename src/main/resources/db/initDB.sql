@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS metric CASCADE ;
+DROP SEQUENCE IF EXISTS metric_seq CASCADE;
+
+CREATE SEQUENCE metric_seq START WITH 100000;
+
+CREATE TABLE metric
+(
+    id        INTEGER PRIMARY KEY DEFAULT nextval('metric_seq'),
+    tag       VARCHAR NOT NULL,
+    value     VARCHAR NOT NULL
+);
